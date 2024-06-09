@@ -1,90 +1,92 @@
-# AI Email Classifier
+# ChatGPT Email Classifier
 
-This project is a web application that allows users to sign in with their Google account, fetch their latest emails, classify them into categories, and display them with color-coded labels. The classifications include Important, Promotions, Social, Marketing, Spam, and General.
+ChatGPT Email Classifier is a web application that allows users to classify their Gmail emails into categories such as Important, Promotions, Social, Marketing, Spam, and General using OpenAI's GPT-3.5 API. Users can sign in with their Google account, fetch their latest emails, and classify them with the power of AI.
 
-## Demo
+## Features
 
-https://github.com/neerajkumarc/ai-email-classifier/assets/78979288/10417e57-d74a-47a0-a175-87d73ab3c748
+- **Google Sign-In**: Users can sign in using their Google account to access their Gmail emails.
+- **Fetch Emails**: Fetch the latest emails from the user's Gmail account.
+- **AI Classification**: Classify emails into predefined categories using OpenAI's GPT-3.5 API.
+- **Dynamic API Key Input**: Users can input their OpenAI API key to enable AI classification.
 
+## Prerequisites
+
+- Node.js and npm installed on your machine.
+- A Google Cloud project set up with OAuth 2.0 credentials.
+- An OpenAI API key.
 
 ## Getting Started
 
-### Prerequisites
+### Clone the Repository
 
-- Node.js and npm installed.
-- Firebase project setup.
+```bash
+git clone https://github.com/yourusername/chatgpt-email-classifier.git
+cd chatgpt-email-classifier
+```
 
-### Installation
+### Install Dependencies
 
-1. Clone the repository:
+```bash
+npm install
+```
 
-    ```bash
-    git clone https://github.com/neerajkumarc/ai-email-classifier
-    cd ai-email-classifier
-    ```
+### Set Up Environment Variables
 
-2. Install the dependencies:
+Create a `.env.local` file in the root directory and add the following environment variables:
 
-    ```bash
-    npm install
-    ```
+```
+NEXT_PUBLIC_GOOGLE_CLIENT_ID=your-google-client-id
+NEXT_PUBLIC_GOOGLE_CLIENT_SECRET=your-google-client-secret
+```
 
-3. Create a Firebase project and obtain your Firebase configuration.
+Replace `your-google-client-id` and `your-google-client-secret` with your Google OAuth 2.0 credentials.
 
-4. Configure Firebase in your project:
+### Run the Development Server
 
-    - Create a `.env` file in the root of your project.
-    - Add your Firebase configuration to `.env`:
-    - Get your gemini API from [here](https://ai.google.dev/gemini-api).
-      ```env
-      NEXT_PUBLIC_API_KEY=your-gemini-api-key 
-      NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-auth-domain
-      NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
-      NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-storage-bucket
-      NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
-      NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
-      NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=your-measurement-id
-      ```
+```bash
+npm run dev
+```
 
-### Running the Application
-
-1. Start the development server:
-
-    ```bash
-    npm run dev
-    ```
-
-2. Open your browser and navigate to `http://localhost:3000`.
-
-## Project Structure
-
-- `src/firebaseConfig.js`: Firebase configuration and authentication functions.
-- `src/app/page.js`: Main component handling user authentication, fetching emails, and displaying them.
-- `lib/getEmails.js`: Utility function for fetching emails.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
 ## Usage
 
-- **Sign In**: Click on "Sign in with Google" to authenticate with your Google account.
-- **Fetch Emails**: Once signed in, click on "Fetch Latest Emails" to fetch and classify your emails.
-- **Classifications**: Emails are classified into categories and displayed with the following color codes:
-  - **Important**: Green
-  - **Promotions**: Blue
-  - **Social**: Red
-  - **Marketing**: Orange
-  - **Spam**: Red
-  - **General**: Blue
-- **Sign Out**: Click on "Logout" to sign out of your Google account.
+1. **Enter OpenAI API Key**: Input your OpenAI API key in the provided field.
+2. **Sign In with Google**: Click the "Sign in with Google" button to log in using your Google account.
+3. **Fetch Emails**: Click the "Fetch Latest Emails" button to fetch the latest emails from your Gmail account.
+4. **Classify Emails**: Click the "Classify" button to classify the fetched emails into categories using the OpenAI API.
 
+## Project Structure
+
+- `components/`: Contains the UI components used in the application.
+- `pages/`: Contains the Next.js pages, including the main `index.js` file.
+- `lib/`: Contains helper functions, such as `getEmails` for fetching emails.
+- `public/`: Contains public assets, including images and icons.
+
+## Dependencies
+
+- `next`: React framework for server-side rendering.
+- `react`: JavaScript library for building user interfaces.
+- `react-dom`: React package for working with the DOM.
+- `firebase`: Firebase SDK for authentication.
+- `openai`: OpenAI SDK for interacting with GPT-3.5 API.
+- `next/image`: Image component for optimized images in Next.js.
 
 ## Contributing
 
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes.
-4. Commit your changes (`git commit -m 'Add new feature'`).
-5. Push to the branch (`git push origin feature-branch`).
-6. Open a pull request.
+Contributions are welcome! Please fork the repository and create a pull request with your changes.
+
+## License
+
+This project is licensed under the MIT License.
 
 ## Acknowledgements
 
-- Thanks to Google for their Gemini AI technology.
+- OpenAI for providing the GPT-3.5 API.
+- Google for providing the OAuth 2.0 authentication.
+- Next.js for the powerful React framework.
+- Firebase for the authentication services.
+
+---
+
+Feel free to reach out with any questions or feedback! Happy coding!
